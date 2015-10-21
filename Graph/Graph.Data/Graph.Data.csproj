@@ -40,8 +40,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataAccess\Mapper\NodesMapper.cs" />
+    <Compile Include="DataAccess\Repository\IGraphRepository.cs" />
+    <Compile Include="DataAccess\Repository\Impl\GraphDbRepository.cs" />
+    <Compile Include="DataAccess\Repository\Impl\GraphXmlRepository.cs" />
+    <Compile Include="IoC\IDataServiceLocator.cs" />
+    <Compile Include="IoC\Impl\DataServiceLocator.cs" />
+    <Compile Include="Model\Node.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
