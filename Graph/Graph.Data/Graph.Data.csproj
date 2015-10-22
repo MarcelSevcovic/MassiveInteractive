@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Entity\IGraphEntity.cs" />
+    <Compile Include="Business\Entity\Impl\GraphEntity.cs" />
+    <Compile Include="Business\Factory\IGraphFactory.cs" />
+    <Compile Include="Business\Factory\Impl\GraphFactory.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DataAccess\Mapper\NodesMapper.cs" />
     <Compile Include="DataAccess\Repository\IGraphRepository.cs" />
@@ -46,7 +50,10 @@
     <Compile Include="DataAccess\Repository\Impl\GraphXmlRepository.cs" />
     <Compile Include="IoC\IDataServiceLocator.cs" />
     <Compile Include="IoC\Impl\DataServiceLocator.cs" />
+    <Compile Include="Model\DirectedGraph.cs" />
+    <Compile Include="Model\GraphBase.cs" />
     <Compile Include="Model\Node.cs" />
+    <Compile Include="Model\UndirectedGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

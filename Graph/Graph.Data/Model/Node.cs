@@ -12,17 +12,28 @@ namespace Graph.Data.Model
 
         public string Label { get; private set; }
 
+        public List<int> AdjacentIds { get; set; }
+
         public List<Node> AdjacentNodes { get; set; }
 
         public Node(int id, string label)
         {
             Id = id;
-            Label = label;
-            
+            Label = label; 
+            AdjacentIds = new List<int>();
+            AdjacentNodes = new List<Node>();
         }
-        public Node(int id, string label, List<Node> adjacentNodes):this(id, label)
+
+        public Node(int id, string label, IEnumerable<int> adjacentIds)
+            : this(id, label)
+        {
+            AdjacentIds.AddRange(adjacentIds);
+
+        }
+        public Node(int id, string label, IEnumerable<Node> adjacentNodes)
+            :this(id, label)
         {          
-            AdjacentNodes = adjacentNodes;
+            AdjacentNodes.AddRange(adjacentNodes);
         }
     }
 }

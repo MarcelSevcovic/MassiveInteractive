@@ -9,6 +9,8 @@ namespace Graph.Data.DataAccess.Repository
 {
     public interface IGraphRepository
     {
-        List<Node> GetNodes();
+        GraphBase GetUndirectedGraph();
+
+        GraphBase GetDirectedGraph();
     }
 }

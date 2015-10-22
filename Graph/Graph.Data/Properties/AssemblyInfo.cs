@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Graph.Data")]
+[assembly: AssemblyTitle("GraphBase.Data")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("IBM")]
-[assembly: AssemblyProduct("Graph.Data")]
+[assembly: AssemblyProduct("GraphBase.Data")]
 [assembly: AssemblyCopyright("Copyright © IBM 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

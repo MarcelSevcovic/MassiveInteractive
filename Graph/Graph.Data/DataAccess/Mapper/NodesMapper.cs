@@ -19,12 +19,33 @@ namespace Graph.Data.DataAccess.Mapper
 
             var label = node.SelectSingleNode("node").SelectSingleNode("label").InnerText;
 
+            if (node.SelectSingleNode("node").SelectSingleNode("adjacentNodes").HasChildNodes)
+                return new Node(id, label, GetAdjacents(node));
+
             return new Node(id, label);
         }
+
+        
+       
 
         public static Node MapFromDb()
         {
             throw new NotImplementedException();
+        }
+
+
+        private static IEnumerable<int> GetAdjacents(XmlNode node)
+        {
+            XmlNodeList adjs = node.SelectSingleNode("node").SelectSingleNode("adjacentNodes").SelectNodes("id");
+
+            foreach (XmlNode adj in adjs)
+            {
+                int id;
+                if (int.TryParse(adj.InnerText, out id))
+                    yield return id;
+                else
+                    throw new Exception("Unable to parse '" + adj.InnerText + "'.");
+            }
         }
     }
 }

@@ -11,10 +11,12 @@ namespace GraphUnitTests
         public void GetXmlData()
         {
             var repository = new GraphXmlRepository();
-            var nodes = repository.GetNodes();
+            var graph = repository.GetUndirectedGraph();
 
-            Assert.IsNotNull(nodes);
-            Assert.IsTrue(nodes.Count>0);
+            Assert.IsNotNull(graph.Nodes);
+            Assert.IsTrue(graph.Nodes.Count > 0);
         }
+
+        
     }
 }

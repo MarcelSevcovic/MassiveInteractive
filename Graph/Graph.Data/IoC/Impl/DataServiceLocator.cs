@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Graph.Data.Business.Entity;
+using Graph.Data.Business.Factory;
+using Graph.Data.Business.Factory.Impl;
 using Graph.Data.DataAccess.Repository;
 using Graph.Data.DataAccess.Repository.Impl;
 
@@ -17,7 +20,9 @@ namespace Graph.Data.IoC.Impl
         {
             services = new Dictionary<object, object>
             {
-                {typeof (IGraphRepository), new GraphXmlRepository()}   //TODO - change it to GraphDbRepository
+                {typeof (IGraphRepository), new GraphXmlRepository()},   //TODO - change it to GraphDbRepository
+                {typeof (IGraphFactory), new GraphFactory(new GraphXmlRepository())}
+             
                 
             };
         }
