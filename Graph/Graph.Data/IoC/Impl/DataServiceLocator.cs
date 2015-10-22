@@ -27,7 +27,7 @@ namespace Graph.Data.IoC.Impl
             };
         }
 
-        public T GetPrintJobService<T>()
+        public T GetGraphService<T>()
         {
             try
             {

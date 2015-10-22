@@ -8,6 +8,6 @@ namespace Graph.Data.IoC
 {
     public interface IDataServiceLocator
     {       
-        T GetPrintJobService<T>();        
+        T GetGraphService<T>();        
     }
 }

@@ -15,7 +15,9 @@ namespace Graph.Data.Model
         public override void AddRelation(Node from, Node to)
         {
             if (!from.AdjacentNodes.Exists(n => n.Id == to.Id))
-                from.AdjacentNodes.Add(to);            
+                from.AdjacentNodes.Add(to);    
+            if (!from.AdjacentIds.Exists(n => n == to.Id))
+                from.AdjacentIds.Add(to.Id);
         }
     }
 }
