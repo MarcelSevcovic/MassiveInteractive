@@ -27,7 +27,7 @@ namespace Graph.Data.DataAccess.Mapper
         {
             if (sqlNode.AdjacentNodes != null)
             {
-                return new Node(sqlNode.Id, sqlNode.Label, sqlNode.AdjacentNodes.Select(adj => adj.AdjacentId).ToList());
+                return new Node(sqlNode.Id, sqlNode.Label, sqlNode.AdjacentNodes1.Select(adj => adj.AdjacentId).ToList());
             }
             return new Node(sqlNode.Id, sqlNode.Label);
         }
