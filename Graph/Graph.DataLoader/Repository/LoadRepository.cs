@@ -17,8 +17,8 @@ namespace Graph.DataLoader.Repository
         {
             using (var context = new GraphEntities())
             {
-                var nodes = context.Nodes;
-                context.Nodes.RemoveRange(nodes);
+                context.AdjacentNodes.RemoveRange(context.AdjacentNodes);
+                context.Nodes.RemoveRange(context.Nodes);
                 context.SaveChanges();         
                 context.Nodes.AddRange(GetNodes());
                 context.SaveChanges();
