@@ -17,10 +17,16 @@ namespace Graph.DataLoader.Repository
         {
             using (var context = new GraphEntities())
             {
-                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [Node]");
-                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [AdjacentNode]");
 
+                var nodes = context.Nodes;
+                context.Nodes.RemoveRange(nodes);
                 context.SaveChanges();
+                
+
+
+                
+
+                
 
                 context.Nodes.AddRange(GetNodes());
 
