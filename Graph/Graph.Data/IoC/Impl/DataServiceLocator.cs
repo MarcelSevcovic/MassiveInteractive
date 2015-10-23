@@ -20,8 +20,8 @@ namespace Graph.Data.IoC.Impl
         {
             services = new Dictionary<object, object>
             {
-                {typeof (IGraphRepository), new GraphXmlRepository()},   //TODO - change it to GraphDbRepository
-                {typeof (IGraphFactory), new GraphFactory(new GraphXmlRepository())}
+                {typeof (IGraphRepository), new GraphDbRepository()},   //TODO - change it to GraphDbRepository
+                {typeof (IGraphFactory), new GraphFactory(new GraphDbRepository())}
              
                 
             };

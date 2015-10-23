@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using Graph.Data.Model;
 
@@ -22,9 +23,13 @@ namespace Graph.Data.DataAccess.Mapper
             return new Node(id, label);
         }              
 
-        public static Node MapFromDb()
+        public static Node MapFromDb(ORM.Node sqlNode)
         {
-            throw new NotImplementedException();
+            if (sqlNode.AdjacentNodes != null)
+            {
+                return new Node(sqlNode.Id, sqlNode.Label, sqlNode.AdjacentNodes.Select(adj => adj.AdjacentId).ToList());
+            }
+            return new Node(sqlNode.Id, sqlNode.Label);
         }
 
 

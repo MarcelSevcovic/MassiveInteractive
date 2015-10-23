@@ -17,6 +17,17 @@ namespace GraphUnitTests
             Assert.IsTrue(graph.Nodes.Count > 0);
         }
 
+
+        [TestMethod]
+        public void GetDbData()
+        {
+            var repository = new GraphDbRepository();
+            var graph = repository.GetUndirectedGraph();
+
+            Assert.IsNotNull(graph.Nodes);
+            Assert.IsTrue(graph.Nodes.Count > 0);
+        }
+
         
     }
 }

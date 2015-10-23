@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Graph.Data.DataAccess.Mapper;
+using Graph.Data.DataAccess.ORM;
 using Graph.Data.Model;
+using Node = Graph.Data.Model.Node;
 
 namespace Graph.Data.DataAccess.Repository.Impl
 {
@@ -11,12 +14,25 @@ namespace Graph.Data.DataAccess.Repository.Impl
     {
         public GraphBase GetUndirectedGraph()
         {
-            throw new NotImplementedException();
+            return new UndirectedGraph(GetNodes());
         }
 
         public GraphBase GetDirectedGraph()
         {
-            throw new NotImplementedException();
+            return new DirectedGraph(GetNodes());
         }
+
+        private IEnumerable<Node> GetNodes()
+        {            
+            using (var context = new GraphEntities())
+            {
+                foreach (var node in context.Nodes)
+                {
+                    yield return NodesMapper.MapFromDb(node);
+                }               
+            }           
+        }
+
+        
     }
 }
