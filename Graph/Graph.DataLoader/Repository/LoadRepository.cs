@@ -17,21 +17,11 @@ namespace Graph.DataLoader.Repository
         {
             using (var context = new GraphEntities())
             {
-
                 var nodes = context.Nodes;
                 context.Nodes.RemoveRange(nodes);
-                context.SaveChanges();
-                
-
-
-                
-
-                
-
+                context.SaveChanges();         
                 context.Nodes.AddRange(GetNodes());
-
                 context.SaveChanges();
-
             }
         }
 
@@ -72,7 +62,7 @@ namespace Graph.DataLoader.Repository
                 var adjIds = GetAdjacents(xmlNode);
                 foreach (var adjId in adjIds)
                 {
-                    node.AdjacentNodes.Add(new AdjacentNode()
+                    node.AdjacentNodes1.Add(new AdjacentNode()
                     {
                         NodeId = node.Id,
                         AdjacentId = adjId
