@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="row">
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Undirected Graph", "UndirectedGraph", "Graph", routeValues: null, htmlAttributes: null)</li>
+        <li>@Html.ActionLink("Directed Graph", "DirectedGraph", "Graph", routeValues: null, htmlAttributes: null)</li>
+    </ul>
+</div>

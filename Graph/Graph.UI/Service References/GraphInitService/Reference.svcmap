@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a909b6b7-6b1e-4840-90c0-b98c7ba50fb7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:60838/GraphInitService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GraphInitService.xsd" MetadataType="Schema" ID="8b3e0376-f49d-4f73-8523-a44e785b9e9a" SourceId="1" SourceUrl="http://localhost:60838/GraphInitService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GraphInitService1.xsd" MetadataType="Schema" ID="c9cba623-ea6f-486f-9023-e2fe9b0e3baa" SourceId="1" SourceUrl="http://localhost:60838/GraphInitService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GraphInitService2.xsd" MetadataType="Schema" ID="cd7cc0cd-4af2-43af-9250-4ce4cae67139" SourceId="1" SourceUrl="http://localhost:60838/GraphInitService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GraphInitService3.xsd" MetadataType="Schema" ID="8f900a9c-d8b1-4fda-9824-359ca8835c2c" SourceId="1" SourceUrl="http://localhost:60838/GraphInitService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GraphInitService.wsdl" MetadataType="Wsdl" ID="fbb58b8f-8089-4fcb-9a1a-a9b4559bb883" SourceId="1" SourceUrl="http://localhost:60838/GraphInitService.svc?wsdl" />
+    <MetadataFile FileName="GraphInitService.disco" MetadataType="Disco" ID="aa588be7-c1c9-4d59-84ca-cc5db9f23d1b" SourceId="1" SourceUrl="http://localhost:60838/GraphInitService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

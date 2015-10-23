@@ -1,0 +1,58 @@
+﻿@model Graph.UI.Models.GraphViewModel
+@{
+    ViewBag.Title = "DirectedGraph";
+}
+
+@section myStyles{
+
+    <link href="~/Content/style.css" rel="stylesheet" />
+}
+
+@section myScripts{
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+    <script>
+        $(function () {
+            var elesJson = @Html.Raw(Model.ToJson());
+            $('#cy').cytoscape({
+                style: cytoscape.stylesheet()
+                  .selector('node')
+                    .css({
+                        'background-color': '#B3767E',
+                        'width': '50',
+                        'height': '50',
+                        'content': 'data(name)'
+                    })
+                  .selector('edge')
+                    .css({
+                        'line-color': 'data(colour)',
+                        'target-arrow-color': 'data(colour)',
+                        'width': 2,
+                        'target-arrow-shape': 'triangle',
+                        'opacity': 0.8
+                    })
+                  .selector(':selected')
+                    .css({
+                        'background-color': 'black',
+                        'line-color': 'black',
+                        'target-arrow-color': 'black',
+                        'source-arrow-color': 'black',
+                        'opacity': 1
+                    }),
+
+                elements: elesJson,
+
+                layout: {
+                    name: 'circle',
+                    padding: 10
+                },
+
+                ready: function () {}
+            });
+        });
+
+    </script>
+}
+
+<div id="cy"></div>
+
