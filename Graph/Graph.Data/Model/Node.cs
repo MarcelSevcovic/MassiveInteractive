@@ -19,7 +19,8 @@ namespace Graph.Data.Model
         public Node(int id, string label)
         {
             Id = id;
-            Label = label; 
+            Label = label;
+            
             AdjacentIds = new List<int>();
             AdjacentNodes = new List<Node>();
         }

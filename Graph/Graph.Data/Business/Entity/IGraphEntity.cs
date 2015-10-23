@@ -12,7 +12,7 @@ namespace Graph.Data.Business.Entity
     {
 
         GraphBase GraphData { get; }
-        List<Node> CalculateShortestPath(Node from, Node to);
+        IEnumerable<int> CalculateShortestPath(Node from, Node to);
 
 
     }

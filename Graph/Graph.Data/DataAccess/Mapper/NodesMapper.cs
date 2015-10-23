@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using Graph.Data.Model;
 
@@ -23,10 +20,7 @@ namespace Graph.Data.DataAccess.Mapper
                 return new Node(id, label, GetAdjacents(node));
 
             return new Node(id, label);
-        }
-
-        
-       
+        }              
 
         public static Node MapFromDb()
         {
@@ -36,7 +30,7 @@ namespace Graph.Data.DataAccess.Mapper
 
         private static IEnumerable<int> GetAdjacents(XmlNode node)
         {
-            XmlNodeList adjs = node.SelectSingleNode("node").SelectSingleNode("adjacentNodes").SelectNodes("id");
+            var adjs = node.SelectSingleNode("node").SelectSingleNode("adjacentNodes").SelectNodes("id");
 
             foreach (XmlNode adj in adjs)
             {

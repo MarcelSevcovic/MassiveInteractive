@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Graph.Data.Model
 {
@@ -22,6 +18,8 @@ namespace Graph.Data.Model
                 from.AdjacentIds.Add(to.Id);
             if (!to.AdjacentIds.Exists(n => n == from.Id))
                 to.AdjacentIds.Add(from.Id);
+
+            base.AddRelation(from, to);
 
         }
     }

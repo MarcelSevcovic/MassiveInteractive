@@ -37,5 +37,56 @@ namespace GraphUnitTests
             Assert.IsNotNull(entity);
             //TODO more asserts
         }
+
+        [TestMethod]
+        public void CalculateDirectedPath()
+        {
+            //TODO use Mock
+            IGraphFactory factory = new GraphFactory(new GraphXmlRepository());
+            var entity = factory.CreateDirected();
+
+            var from = entity.GraphData.Nodes.FirstOrDefault(n => n.Id == 1);   //apple
+            var to = entity.GraphData.Nodes.FirstOrDefault(n => n.Id == 6);     //ebay
+
+            var path = entity.CalculateShortestPath(from, to);
+
+            Assert.IsNotNull(entity);
+            Assert.IsNotNull(path);
+            //TODO more asserts
+        }
+
+        [TestMethod]
+        public void CalculateDirectedPathNon()
+        {
+            //TODO use Mock
+            IGraphFactory factory = new GraphFactory(new GraphXmlRepository());
+            var entity = factory.CreateDirected();
+
+            var from = entity.GraphData.Nodes.FirstOrDefault(n => n.Id == 6);   //ebay
+            var to = entity.GraphData.Nodes.FirstOrDefault(n => n.Id == 2);     //intel
+
+            var path = entity.CalculateShortestPath(from, to);
+
+            Assert.IsNotNull(entity);
+            Assert.IsNull(path);
+            
+        }
+
+        [TestMethod]
+        public void CalculateUndirectedPath()
+        {
+            //TODO use Mock
+            IGraphFactory factory = new GraphFactory(new GraphXmlRepository());
+            var entity = factory.CreateUndirected();
+
+            var from = entity.GraphData.Nodes.FirstOrDefault(n => n.Id == 6);   //ebay
+            var to = entity.GraphData.Nodes.FirstOrDefault(n => n.Id == 2);     //intel
+
+            var path = entity.CalculateShortestPath(from, to);
+
+            Assert.IsNotNull(entity);
+            Assert.IsNotNull(path);
+            //TODO more asserts
+        }
     }
 }

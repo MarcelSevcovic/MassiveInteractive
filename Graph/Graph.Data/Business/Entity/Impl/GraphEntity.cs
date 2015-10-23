@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Graph.Data.Business.Entity.Helper;
 using Graph.Data.DataAccess.Repository;
 using Graph.Data.Model;
 
@@ -22,10 +23,11 @@ namespace Graph.Data.Business.Entity.Impl
             AddRelations();
         }
 
-        public List<Node> CalculateShortestPath(Node from, Node to)
+        public IEnumerable<int> CalculateShortestPath(Node from, Node to)
         {
-            throw new NotImplementedException();
-           
+            var b = new PathCalculator(GraphData, GraphData.Nodes.IndexOf(from));
+            var path = b.PathTo(GraphData.Nodes.IndexOf(to));
+            return path != null ? path.Select(i => GraphData.Nodes[i].Id).ToList() : null;
         }
 
         private void AddRelations()

@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Entity\Helper\PathCalculator.cs" />
     <Compile Include="Business\Entity\IGraphEntity.cs" />
     <Compile Include="Business\Entity\Impl\GraphEntity.cs" />
     <Compile Include="Business\Factory\IGraphFactory.cs" />

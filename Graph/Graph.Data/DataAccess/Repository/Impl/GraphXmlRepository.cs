@@ -29,6 +29,8 @@ namespace Graph.Data.DataAccess.Repository.Impl
         {
             var filesInDirectory = Directory.EnumerateFiles(PATH, SEARCH_PATTERN);
             var nodes = GetNodes(filesInDirectory);
+            
+
             return nodes.Select(NodesMapper.MapFromXml).ToList();
         }
 
